@@ -1,0 +1,9 @@
+import { MapPinned, BrainCircuit, BellRing, Store } from 'lucide-react'
+import Reveal from './Reveal'
+const features=[
+ {icon:MapPinned,title:'Location Tracking',desc:'GPS + Geo-Fencing detects when customers are near participating stores.'},
+ {icon:Store,title:'Purchase Analysis',desc:'POS transactions reveal buying patterns and product relationships.'},
+ {icon:BrainCircuit,title:'AI Recommendations',desc:'AI turns customer behavior into relevant, personalized offers.'},
+ {icon:BellRing,title:'Real-Time Notifications',desc:'Offers reach the customer at the moment they are most useful.'},
+]
+export default function Features(){return <section id="features" className="section-pad py-20 bg-[#fffaf5] border-y border-[#ecdcd0]"><Reveal className="grid lg:grid-cols-[.7fr_1.3fr] gap-10 items-end mb-10"><div><span className="text-xs tracking-[.15em] uppercase text-[#a15a3a]">The Power of Smart Geo-Offer</span><h2 className="text-3xl sm:text-4xl font-bold mt-3 text-[#3b2418]">Everything needed for a <span className="text-[#b85f37]">smarter retail moment.</span></h2></div><p className="text-[#80695b] max-w-xl">We connect location, purchase behavior and AI to deliver hyper-personalized offers that drive engagement, loyalty and sales.</p></Reveal><div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">{features.map(({icon:Icon,title,desc},i)=><Reveal key={title} delay={i*80}><div className="group card h-full p-6 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_25px_55px_rgba(101,56,34,.13)]"><div className="w-12 h-12 rounded-2xl bg-[#f5dfd0] text-[#9a4e30] flex items-center justify-center mb-5 group-hover:scale-110 transition-transform"><Icon size={21}/></div><h3 className="font-semibold text-[#3b2418] mb-2">{title}</h3><p className="text-sm text-[#80695b] leading-relaxed">{desc}</p><div className="mt-5 text-[#a45b3b] text-sm">Explore →</div></div></Reveal>)}</div></section>}
