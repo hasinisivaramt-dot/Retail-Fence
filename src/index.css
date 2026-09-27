@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ink-950 text-white font-body antialiased;
+  background-image:
+    radial-gradient(1200px 600px at 15% -10%, rgba(245, 56, 95, 0.10), transparent 60%),
+    radial-gradient(900px 500px at 100% 10%, rgba(34, 195, 122, 0.06), transparent 55%);
+}
+
+h1, h2, h3, h4 {
+  @apply font-display;
+}
+
+::selection {
+  background: rgba(245, 56, 95, 0.35);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #f5385f;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.section-pad {
+  @apply px-6 md:px-10 lg:px-20;
+}
+
+.card {
+  @apply bg-ink-800/70 border border-white/5 rounded-2xl;
+}
